@@ -1,5 +1,8 @@
-﻿namespace eComerce.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace eComerce.Models
 {
+    [Table("Actor_Movie")]
     public class Actor_Movie
     {
         public int MovieId { get; set; }

@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eComerce.Models
 {
+    [Table("Producer")]
     public class Producer
     {
         [Key]

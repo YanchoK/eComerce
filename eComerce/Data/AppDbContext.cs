@@ -1,5 +1,6 @@
 ﻿using eComerce.Models;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eComerce.Data
 {
@@ -24,10 +25,10 @@ namespace eComerce.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Actor> Actor { get; set; }
-        public DbSet<Movie> Movie { get; set; }
-        public DbSet<Actor_Movie> Actor_Movie { get; set; }
-        public DbSet<Cinema> Cinema { get; set; }
-        public DbSet<Producer> Producer { get; set; }
+        public DbSet<Actor> Actors { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Actor_Movie> Actors_Movies { get; set; }
+        public DbSet<Cinema> Cinemas { get; set; }
+        public DbSet<Producer> Producers { get; set; }
     }
 }

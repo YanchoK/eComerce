@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eComerce.Models
 {
+    [Table("Movie")]
     public class Movie
     {
         [Key]

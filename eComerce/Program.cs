@@ -32,6 +32,9 @@ namespace eComerce
 
             app.UseAuthorization();
 
+            //Seed database
+            AppDbInitializer.Seed(app);
+
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");

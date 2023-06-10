@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using eComerce.Data.Base;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eComerce.Models
 {
     [Table("Producer")]
-    public class Producer
+    public class Producer:IEntityBase
     {
         [Key]
         public int Id { get; set; }

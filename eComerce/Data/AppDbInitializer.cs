@@ -13,9 +13,9 @@ namespace eComerce.Data
                 context.Database.EnsureCreated();
 
                 //Cinema
-                if (!context.Cinema.Any())
+                if (!context.Cinemas.Any())
                 {
-                    context.Cinema.AddRange(new List<Cinema>()
+                    context.Cinemas.AddRange(new List<Cinema>()
                     {
                         new Cinema()
                         {
@@ -51,9 +51,9 @@ namespace eComerce.Data
                     context.SaveChanges();
                 }
                 //Actors
-                if (!context.Actor.Any())
+                if (!context.Actors.Any())
                 {
-                    context.Actor.AddRange(new List<Actor>()
+                    context.Actors.AddRange(new List<Actor>()
                     {
                         new Actor()
                         {
@@ -90,9 +90,9 @@ namespace eComerce.Data
                     context.SaveChanges();
                 }
                 //Producers
-                if (!context.Producer.Any())
+                if (!context.Producers.Any())
                 {
-                    context.Producer.AddRange(new List<Producer>()
+                    context.Producers.AddRange(new List<Producer>()
                     {
                         new Producer()
                         {
@@ -129,9 +129,9 @@ namespace eComerce.Data
                     context.SaveChanges();
                 }
                 //Movies
-                if (!context.Movie.Any())
+                if (!context.Movies.Any())
                 {
-                    context.Movie.AddRange(new List<Movie>()
+                    context.Movies.AddRange(new List<Movie>()
                     {
                         new Movie()
                         {
@@ -209,9 +209,9 @@ namespace eComerce.Data
                     context.SaveChanges();
                 }
                 //Actors & Movies
-                if (!context.Actor_Movie.Any())
+                if (!context.Actors_Movies.Any())
                 {
-                    context.Actor_Movie.AddRange(new List<Actor_Movie>()
+                    context.Actors_Movies.AddRange(new List<Actor_Movie>()
                     {
                         new Actor_Movie()
                         {

@@ -48,5 +48,27 @@ namespace eComerce.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        // Get: Actors/Edit/1
+        public async Task<IActionResult> Edit(int id)
+        {
+            var producerDetails = await _service.GetByIdAsync(id);
+            if (producerDetails == null) return View("NotFound");
+            return View(producerDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,ProfilePictureURL,Biography")] Producer producer)
+        {
+            if (!ModelState.IsValid)
+            {
+                //If the input data is not valid, return the same view, but with the errors
+                return View(producer);
+            }
+
+            //Call the service to add the new actor to the database
+            await _service.UpdateAsync(id, producer);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

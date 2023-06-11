@@ -16,6 +16,7 @@ namespace eComerce
             //Services configuration
             builder.Services.AddScoped<IActorsService, ActorsService>();
             builder.Services.AddScoped<IProducerService, ProducerService>();
+            builder.Services.AddScoped<ICinemaService, CinemaService>();
 
            // Add services to the container.
            builder.Services.AddControllersWithViews();

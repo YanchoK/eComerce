@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using eComerce.Data.Base;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eComerce.Models
 {
     [Table("Cinema")]
-    public class Cinema
+    public class Cinema:IEntityBase
     {
         [Key]
         public int Id { get; set; }

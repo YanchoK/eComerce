@@ -1,5 +1,6 @@
 ﻿using eComerce.Data;
 using eComerce.Data.Services;
+using eComerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,27 @@ namespace eComerce.Controllers
             var producerDetails = await _service.GetByIdAsync(id);
             if (producerDetails == null) return View("NotFound");
             return View(producerDetails);
+        }
+
+        // Get: Actors/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Biography")] Producer producer)
+        {
+            if (!ModelState.IsValid)
+            {
+                //If the input data is not valid, return the same view, but with the errors
+                return View(producer);
+            }
+
+            //Call the service to add the new actor to the database
+            await _service.AddAsync(producer);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }
